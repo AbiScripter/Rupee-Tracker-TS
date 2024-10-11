@@ -26,3 +26,4 @@ const SignUpSignIn = () => {
 };
 
 export default SignUpSignIn;
+export {};

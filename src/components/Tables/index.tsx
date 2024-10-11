@@ -199,6 +199,7 @@ const DataTable = () => {
 };
 
 export default DataTable;
+export {};
 
 // const dataSource = [
 //   {

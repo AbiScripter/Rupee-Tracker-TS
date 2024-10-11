@@ -38,3 +38,4 @@ const Expense = () => {
 };
 
 export default Expense;
+export {};

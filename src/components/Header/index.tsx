@@ -95,3 +95,4 @@ const ConfirmLogout = ({ handleSignOut }: ConfirmLogoutProps) => {
 };
 
 export default Header;
+export {};

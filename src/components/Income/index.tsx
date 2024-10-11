@@ -38,3 +38,4 @@ const Income = () => {
 };
 
 export default Income;
+export {};
