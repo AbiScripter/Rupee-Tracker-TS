@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import Header from "../components/Header";
 import Expense from "../components/Expense";
 import Income from "../components/Income";
 import DataTable from "../components/Tables";
@@ -15,25 +14,33 @@ import SideBar from "../components/Sidebar";
 const Dashboard = () => {
   const user = useSelector((state: RootState) => state.user);
   const activeTab = useSelector((state: RootState) => state.tabs.activeTab);
+  let today = new Date().toDateString();
 
   return (
     <div className="app-container">
-      <Header />
       <SideBar />
       <div className="content-container">
-        {activeTab === "dashboard" && <BalanceContainer user={user} />}
-        {activeTab === "reports" && <DataVisualization user={user} />}
-        {activeTab === "transactions" && <TransactionsTable />}
+        <div className="content-header">
+          <h2>{`Hey, ${user.name.slice(0, 1).toUpperCase()}${user.name.slice(
+            1
+          )}`}</h2>
+          <p>{today}</p>
+        </div>
+        <div className="content-body">
+          {activeTab === "status board" && <StatusBoard user={user} />}
+          {activeTab === "reports" && <Reports user={user} />}
+          {activeTab === "transactions" && <TransactionsTable />}
+        </div>
       </div>
     </div>
   );
 };
 
-const BalanceContainer = ({ user }: { user: UserState }) => {
+const StatusBoard = ({ user }: { user: UserState }) => {
   return (
-    <div className="balance-container">
+    <div className="status-board">
       <div className="card card-balance">
-        <h3>Balance</h3>
+        <h3>Available Balance</h3>
         <h1>₹{user.currBalance}</h1>
       </div>
       <div className="card">
@@ -46,7 +53,7 @@ const BalanceContainer = ({ user }: { user: UserState }) => {
   );
 };
 
-const DataVisualization = ({ user }: { user: UserState }) => {
+const Reports = ({ user }: { user: UserState }) => {
   return (
     <div>
       {user.expenses.length === 0 && user.incomes.length === 0 ? (

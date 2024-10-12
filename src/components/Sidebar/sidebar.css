@@ -1,0 +1,83 @@
+/* General sidebar styling */
+.side-bar {
+  background-color: #d3d3d3;
+  padding: 2rem;
+  border-radius: 20px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.side-bar-header {
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.tab {
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #fff;
+}
+
+.side-bar-burger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  /* Hide sidebar by default for small screens */
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    transform: translateX(-100%);
+    z-index: 10;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translateX(-100%);
+    opacity: 0;
+    border-radius: 0;
+  }
+
+  .side-bar.open {
+    transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .side-bar-burger-menu {
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    display: block;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar-overlay {
+    display: none;
+  }
+
+  .side-bar-burger-menu {
+    display: none;
+  }
+}

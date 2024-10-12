@@ -49,7 +49,11 @@ const DataTable = () => {
   const [filterValue, setFilterValue] = useState("all");
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("");
-  const defaultTitle = () => "Transaction History";
+  const defaultTitle = () => (
+    <p style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+      Transaction History
+    </p>
+  );
   const tableProps = {
     title: defaultTitle,
     bordered: true,

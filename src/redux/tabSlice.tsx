@@ -5,7 +5,7 @@ type TabState = {
 };
 
 const initialState: TabState = {
-  activeTab: "dashboard",
+  activeTab: "status board",
 };
 
 const tabSlice = createSlice({
