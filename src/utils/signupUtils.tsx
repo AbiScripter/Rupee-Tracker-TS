@@ -1,10 +1,10 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { toast } from "react-toastify";
-import { signupFormProps } from "../components/Forms/SignupForm";
+import { signupFormSubmitProps } from "../components/Forms/SignupForm";
 
 type singupUserProps = {
-  data: signupFormProps;
+  data: signupFormSubmitProps;
   setLoading: (loadState: boolean) => void;
 };
 

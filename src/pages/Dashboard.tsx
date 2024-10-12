@@ -1,6 +1,4 @@
-import React from "react";
 import { useSelector } from "react-redux";
-
 import Header from "../components/Header";
 import Expense from "../components/Expense";
 import Income from "../components/Income";
@@ -12,17 +10,20 @@ import "./Dashboard.css";
 import { RootState } from "../redux/store";
 
 import { type UserState } from "../redux/userSlice";
+import SideBar from "../components/Sidebar";
 
 const Dashboard = () => {
   const user = useSelector((state: RootState) => state.user);
+  const activeTab = useSelector((state: RootState) => state.tabs.activeTab);
 
   return (
     <div className="app-container">
       <Header />
-
+      <SideBar />
       <div className="content-container">
-        <BalanceContainer user={user} />
-        <DataVisualization user={user} />
+        {activeTab === "dashboard" && <BalanceContainer user={user} />}
+        {activeTab === "reports" && <DataVisualization user={user} />}
+        {activeTab === "transactions" && <TransactionsTable />}
       </div>
     </div>
   );
@@ -60,9 +61,16 @@ const DataVisualization = ({ user }: { user: UserState }) => {
               <PieChart />
             </div>
           </div>
-          <DataTable />
         </div>
       )}
+    </div>
+  );
+};
+
+const TransactionsTable = () => {
+  return (
+    <div>
+      <DataTable />
     </div>
   );
 };

@@ -64,8 +64,8 @@ const ExpenseForm = ({ onModalOpenClose }: ExpenseFormProps) => {
       </Form.Item>
 
       <Form.Item
-        label="created"
-        name="created"
+        label="createdAt"
+        name="createdAt"
         rules={[{ required: true, message: "Please enter date!" }]}
       >
         <DatePicker />

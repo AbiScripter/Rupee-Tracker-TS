@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth, db } from "./firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
@@ -11,13 +11,15 @@ import { initiateUser, UserState } from "./redux/userSlice";
 // import PrivateRoutes from "./components/PrivateRoutes";
 import Loader from "./components/Loader";
 import SignupPage from "./pages/SignupPage";
+import { RootState } from "./redux/store";
 
 // import Dashboard from "./pages/Dashboard";
 //!code splitting
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-
 function App() {
   const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user);
+  console.log(user);
 
   //!initiate user data
   useEffect(() => {

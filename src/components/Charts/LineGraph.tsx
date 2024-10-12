@@ -81,10 +81,11 @@ export function LineGraph() {
     for (const transaction of sortedGraphData) {
       prevAmount += transaction.amount;
       cumulativeAmounts.push(prevAmount); // adding cumulative amount
-      const formattedDate = `${transaction.createdAt.slice(
+
+      const formattedDate = `${String(new Date(transaction.createdAt)).slice(
         4,
         10
-      )} ${transaction.createdAt.slice(13, 15)}`; // pushing respective dates as labels
+      )}`; // pushing respective dates as labels
       labelsForGraph.push(formattedDate);
     }
 
