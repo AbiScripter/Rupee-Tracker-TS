@@ -65,6 +65,10 @@
   text-align: center;
 }
 
+.ant-input-search-button {
+  background-color: #b9b9b9 !important;
+}
+
 /* ! CHARTS */
 .charts-container {
   padding: 1rem;

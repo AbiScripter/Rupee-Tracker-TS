@@ -44,7 +44,12 @@ const IncomeForm = ({ onModalOpenClose }: IncomeFormProps) => {
     form.resetFields();
   };
   return (
-    <Form onFinish={handleAddIncome} form={form} variant="filled">
+    <Form
+      onFinish={handleAddIncome}
+      form={form}
+      variant="filled"
+      // style={{ maxWidth: 400, backgroundColor: "red" }}
+    >
       <Form.Item
         label="source"
         name="source"
@@ -59,7 +64,7 @@ const IncomeForm = ({ onModalOpenClose }: IncomeFormProps) => {
         name="amount"
         rules={[{ required: true, message: "Please input amount!" }]}
       >
-        <InputNumber />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -67,7 +72,7 @@ const IncomeForm = ({ onModalOpenClose }: IncomeFormProps) => {
         name="createdAt"
         rules={[{ required: true, message: "Please enter date!" }]}
       >
-        <DatePicker />
+        <DatePicker style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item

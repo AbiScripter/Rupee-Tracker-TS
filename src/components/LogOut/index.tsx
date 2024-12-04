@@ -62,6 +62,7 @@ const ConfirmLogout = ({ handleSignOut }: ConfirmLogoutProps) => {
     <div style={{ marginRight: "1rem" }}>
       <Button
         className="sign-out-btn"
+        /* background-color:!important; */
         style={{ fontSize: "1rem" }}
         onClick={showModal}
       >

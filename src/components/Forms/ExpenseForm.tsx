@@ -60,7 +60,7 @@ const ExpenseForm = ({ onModalOpenClose }: ExpenseFormProps) => {
         name="amount"
         rules={[{ required: true, message: "Please input amount!" }]}
       >
-        <InputNumber />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
@@ -68,7 +68,7 @@ const ExpenseForm = ({ onModalOpenClose }: ExpenseFormProps) => {
         name="createdAt"
         rules={[{ required: true, message: "Please enter date!" }]}
       >
-        <DatePicker />
+        <DatePicker style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item
