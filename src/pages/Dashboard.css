@@ -19,6 +19,9 @@
   border-bottom: 1px solid #b9b9b9;
   margin-top: 0.9rem;
   padding-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content-body {
@@ -33,11 +36,11 @@
   align-items: center;
 } */
 
-.sign-out-btn {
+/* .sign-out-btn {
   position: absolute;
   right: 15px;
   top: 20px;
-}
+} */
 
 .status-board {
   display: flex;

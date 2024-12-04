@@ -10,6 +10,7 @@ import { RootState } from "../redux/store";
 
 import { type UserState } from "../redux/userSlice";
 import SideBar from "../components/Sidebar";
+import LogOut from "../components/LogOut";
 
 const Dashboard = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -21,10 +22,13 @@ const Dashboard = () => {
       <SideBar />
       <div className="content-container">
         <div className="content-header">
-          <h2>{`Hey, ${user.name.slice(0, 1).toUpperCase()}${user.name.slice(
-            1
-          )}`}</h2>
-          <p>{today}</p>
+          <div>
+            <h2>{`Hey, ${user.name.slice(0, 1).toUpperCase()}${user.name.slice(
+              1
+            )}`}</h2>
+            <p>{today}</p>
+          </div>
+          <LogOut />
         </div>
         <div className="content-body">
           {activeTab === "status board" && <StatusBoard user={user} />}

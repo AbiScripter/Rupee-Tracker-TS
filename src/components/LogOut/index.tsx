@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import Logo from "../Logo/Logo";
 import { Button, Modal } from "antd";
 import { signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { reset } from "../../redux/userSlice";
 import { toast } from "react-toastify";
-import "./style.css";
+// import "./style.css";
 
-const Header = () => {
+const LogOut = () => {
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
   const dispatch = useDispatch();
@@ -60,8 +59,12 @@ const ConfirmLogout = ({ handleSignOut }: ConfirmLogoutProps) => {
   };
 
   return (
-    <>
-      <Button type="primary" className="sign-out-btn" onClick={showModal}>
+    <div style={{ marginRight: "1rem" }}>
+      <Button
+        className="sign-out-btn"
+        style={{ fontSize: "1rem" }}
+        onClick={showModal}
+      >
         <span className="log-out-text">SignOut</span>
       </Button>
       <Modal
@@ -81,9 +84,9 @@ const ConfirmLogout = ({ handleSignOut }: ConfirmLogoutProps) => {
       >
         <p>Are you sure to log out</p>
       </Modal>
-    </>
+    </div>
   );
 };
 
-export default Header;
+export default LogOut;
 export {};

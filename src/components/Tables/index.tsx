@@ -196,7 +196,7 @@ const DataTable = () => {
         pagination={false}
         // size="middle"
         className="table"
-        scroll={{ x: 400 }}
+        scroll={{ x: 100 }}
       />
     </div>
   );

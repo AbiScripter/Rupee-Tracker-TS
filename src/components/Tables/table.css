@@ -32,6 +32,10 @@
   align-items: center;
   justify-content: space-around;
   text-align: center;
+
+  .ant-select {
+    margin-left: 0.4rem;
+  }
 }
 
 .search-container {
@@ -51,7 +55,7 @@
 
 @media (width < 768px) {
   .table {
-    width: 100%;
+    /* width: 100%; */
   }
 
   .table-section {
