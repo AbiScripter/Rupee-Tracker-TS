@@ -2,6 +2,7 @@
   margin-top: 10vh;
   display: flex;
   justify-content: center;
+  padding: 1rem;
 
   ::placeholder {
     color: black;
@@ -58,5 +59,9 @@
 @media (width < 576px) {
   .formimg {
     display: none;
+  }
+
+  .signup-form-container {
+    border: 1px solid gray;
   }
 }

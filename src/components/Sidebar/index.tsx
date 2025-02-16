@@ -3,6 +3,7 @@ import { changeActiveTab } from "../../redux/tabSlice";
 import { RootState } from "../../redux/store";
 import "./sidebar.css";
 import { useState } from "react";
+import burgerMenu from "../../assets/burger-menu-svgrepo-com.svg";
 
 const SideBar = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -24,7 +25,7 @@ const SideBar = () => {
     <div>
       {/* Burger Menu Button */}
       <button className="side-bar-burger-menu" onClick={toggleSidebar}>
-        &#9776;
+        <img src={burgerMenu} alt="burger" style={{ width: "2rem" }} />
       </button>
 
       {/* <div className="side-bar">

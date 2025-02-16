@@ -1,6 +1,6 @@
 .app-container {
   display: flex;
-  min-height: 90vh;
+  height: 100vh;
   margin: 2rem;
   border-radius: 20px;
   background-color: #d3d3d3;
@@ -13,6 +13,7 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .content-header {
@@ -27,20 +28,6 @@
 .content-body {
   padding-left: 1rem;
 }
-
-/* 
-.loader {
-  min-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .sign-out-btn {
-  position: absolute;
-  right: 15px;
-  top: 20px;
-} */
 
 .status-board {
   display: flex;
@@ -129,6 +116,31 @@
 }
 
 @media (width < 576px) {
+  .content-body {
+    padding-left: 0;
+  }
+
+  .content-container {
+    margin: 0;
+    padding-top: 1rem;
+    border-radius: 0;
+  }
+
+  .app-container {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .table-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .table-filter-container {
+    flex-direction: column;
+  }
+
   .sign-out-btn {
     right: 5px;
     top: 10px;
